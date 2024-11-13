@@ -1,12 +1,7 @@
-# [Name]
-## [Assignment #]
-## [Submission date: MM/DD/YY]
+# Izail Chamberlain
+## Lab 09 & HW04
+## Submission date: 11/12/24
 ## Worked with/sources 
-* example
-* example
-* example
-* example
+* ChatGPT to clarify command descriptions 
 ## Project Quirks/ Things that don't work
-* example
-* example
-* example
+* N/A
