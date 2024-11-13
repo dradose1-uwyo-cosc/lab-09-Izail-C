@@ -2,7 +2,7 @@
 
 Name: Izail Chamberlain
 Lab Section: 11
-Submission Date: 11.12.24
+Submission Date: 11.13.24
 Sources, help given to/received from: ChatGPT to clarify command descriptions
 
 You will be reading from and writing to a file.
@@ -42,3 +42,45 @@ Lab Section
 Submission Date
 
 Sources, help given to/received from"""
+
+from pathlib import Path
+
+input_path = Path('data/prompt.txt')
+output_path = Path('data/out.txt')
+
+# Reads the contents of the input file
+contents = input_path.read_text()
+
+# Initializes a list to hold each formatted line for output
+output_lines = []
+
+# Processes each line in the input file
+for line in contents.splitlines():
+    # Splits by tab to get key-value pairs
+    pairs = line.split('\t')
+    formatted_line = ''
+    
+    for pair in pairs:
+        # Check if ':' exists in pair to avoid errors
+        if ':' in pair:
+            # Splits by ':' to get the key and the number of characters
+            key, count = pair.split(':')
+            count = int(count)
+            
+            # Appends spaces or asterisks based on the key
+            if key == 'w':
+                formatted_line += ' ' * count
+            elif key == '*':
+                formatted_line += '*' * count
+    
+    # Adds the formatted line to the output list
+    output_lines.append(formatted_line)
+
+# Writes all lines to the output file
+output_path.write_text('\n'.join(output_lines))
+#Confirms generation from file
+print("ASCII art generated and saved to out.txt") 
+
+
+
+
